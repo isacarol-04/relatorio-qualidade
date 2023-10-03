@@ -31,18 +31,18 @@ results = results[['City','Site ID', 'State', 'Quality (0-10)', 'Mbps', 'Alerts'
 #Muda coluna Yes or No para 1 ou 0
 results['Alerts'] = results['Alerts'].map({'Yes': 1, 'No': 0})
 
-print("Site com alarmes ativos: ")
+print("\n\nSite com alarmes ativos: ")
 print(results[results['Alerts']==1])
 
-print("\nSites com 0 de Qualidade: ")
+print("\n\nSites com 0 de Qualidade: ")
 print(results[results['Quality (0-10)'] == 0])
 
-print("\nSites com mais de 80 Mbps: ")
+print("\n\nSites com mais de 80 Mbps: ")
 print(results[results['Mbps'] > 80])
 
-print("\nSites com menos de 10 Mbps: ")
+print("\n\nSites com menos de 10 Mbps: ")
 print(results[results['Mbps'] < 10])
 
 sites_nao_presentes = colunas_sitelist[~colunas_sitelist['Site ID'].isin(colunas_results['Site ID'])]
-print("\nSites que nao estao presentes no Results: ")
+print("\n\nSites que nao estao presentes no Results: ")
 print(sites_nao_presentes)
